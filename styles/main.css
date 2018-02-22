@@ -7,6 +7,7 @@ body {
     width: 60%;
     min-width: 650px;
     height: 50%;
+    min-height: 450px;
     margin: 5% 20%;
 
     background: #9F3A37;
