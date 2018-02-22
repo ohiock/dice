@@ -59,4 +59,7 @@
     };
 
     roll();
+
+    const button = document.getElementsByTagName('button')[0];
+    button.onclick = roll;
 })();
