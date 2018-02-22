@@ -1,3 +1,7 @@
+body {
+    background: #3D505D;
+}
+
 .dice-container {
     display: flex;
     width: 60%;
@@ -5,7 +9,7 @@
     height: 50%;
     margin: 5% 20%;
 
-    background: #dddddd;
+    background: #9F3A37;
 }
 
 .die {
@@ -16,7 +20,7 @@
     height: 250px;
     margin: auto;
 
-    background: #ffffff;
+    background: #EFEFEF;
     box-shadow: 1px 1px 25px 1px rgba(0, 0, 0, 0.25);
 }
 
@@ -31,13 +35,15 @@
 .roll button {
     padding: 25px 50px;
 
-    background: #ffffff;
-    border: 1px solid #dddddd;
+    background: #CB5940;
+    border: 3px solid #B04D37;
+    color: #EFEFEF;
     font-size: 32px;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
 }
 
 .roll button:active {
-    background: #dddddd;
+    background: #B04D37;
 }
 
 .roll button:focus {
