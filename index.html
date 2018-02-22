@@ -5,19 +5,83 @@
     </head>
     <body>
         <div class="dice-container">
-            <div class="die one">
-                <div class="row one"></div>
-                <div class="row two"></div>
-                <div class="row three"></div>
+            <div class="die 1">
+                <div class="row 1"></div>
+                <div class="row 2"></div>
+                <div class="row 3"></div>
             </div>
-            <div class="die two">
-                <div class="row one"></div>
-                <div class="row two"></div>
-                <div class="row three"></div>
+            <div class="die 2">
+                <div class="row 1"></div>
+                <div class="row 2"></div>
+                <div class="row 3"></div>
             </div>
         </div>
         <div class="roll">
             <button>Roll!</button>
         </div>
+        <script>
+            (() => {
+                const numberConfig = {
+                    '1': [
+                        [0, 0, 0],
+                        [0, 1, 0],
+                        [0, 0, 0]
+                    ],
+                    '2': [
+                        [1, 0, 0],
+                        [0, 0, 0],
+                        [0, 0, 1]
+                    ],
+                    '3': [
+                        [1, 0, 0],
+                        [0, 1, 0],
+                        [0, 0, 1]
+                    ],
+                    '4': [
+                        [1, 0, 1],
+                        [0, 0, 0],
+                        [1, 0, 1]
+                    ],
+                    '5': [
+                        [1, 0, 1],
+                        [0, 1, 0],
+                        [1, 0, 1]
+                    ],
+                    '6': [
+                        [1, 0, 1],
+                        [1, 0, 1],
+                        [1, 0, 1]
+                    ]
+                };
+
+                const setNumberConfigs = (die, num) => {
+                    for (let i = 0; i < 3; i++) {
+                        const row = die.getElementsByClassName(`row ${i + 1}`)[0];
+                        const rowConfig = numberConfig[num.toString()][i];
+
+                        const content = rowConfig.map(item => {
+                            return item
+                                ? '<span class="dot-container active"></span>'
+                                : '<span class="dot-container"></span>';
+                        });
+
+                        row.innerHTML = content.join('');
+                    }
+                };
+
+                const roll = () => {
+                    const numberOne = Math.floor(Math.random() * 6);
+                    const numberTwo = Math.floor(Math.random() * 6);
+
+                    const dieOne = document.getElementsByClassName('die 1')[0];
+                    const dieTwo = document.getElementsByClassName('die 2')[0];
+
+                    setNumberConfigs(dieOne, numberOne);
+                    setNumberConfigs(dieTwo, numberTwo);
+                };
+
+                roll();
+            })();
+        </script>
     </body>
 </html>
