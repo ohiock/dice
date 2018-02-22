@@ -1,6 +1,7 @@
 .dice-container {
     display: flex;
     width: 60%;
+    min-width: 650px;
     height: 50%;
     margin: 5% 20%;
 
@@ -8,6 +9,9 @@
 }
 
 .die {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     width: 250px;
     height: 250px;
     margin: auto;
@@ -17,7 +21,10 @@
 }
 
 .roll {
-    width: 100%;
+    width: 60%;
+    min-width: 650px;
+    margin: 5% 20%;
+
     text-align: center;
 }
 
@@ -36,3 +43,20 @@
 .roll button:focus {
     outline: 0;
 }
+
+.die .row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.dot-container {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+
+    border-radius: 30px;
+}
+
+.dot-container.active {
+    background: #000000;
+} 
